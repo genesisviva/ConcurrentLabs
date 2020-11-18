@@ -1,0 +1,48 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/genesisviva/Parallel/lab1/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_e6434 && [1/2  50% :: 0.020] Building C object CMakeFiles/cmTC_e6434.dir/src.c.o
+[2/2 100% :: 0.036] Linking C executable cmTC_e6434
+FAILED: cmTC_e6434 
+: && /bin/gcc-9 -DCMAKE_HAVE_LIBC_PTHREAD  -rdynamic CMakeFiles/cmTC_e6434.dir/src.c.o  -o cmTC_e6434   && :
+/usr/bin/ld: CMakeFiles/cmTC_e6434.dir/src.c.o: в функции «main»:
+src.c:(.text+0x46): неопределённая ссылка на «pthread_create»
+/usr/bin/ld: src.c:(.text+0x52): неопределённая ссылка на «pthread_detach»
+/usr/bin/ld: src.c:(.text+0x63): неопределённая ссылка на «pthread_join»
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/genesisviva/Parallel/lab1/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_96106 && [1/2  50% :: 0.016] Building C object CMakeFiles/cmTC_96106.dir/CheckFunctionExists.c.o
+[2/2 100% :: 0.022] Linking C executable cmTC_96106
+FAILED: cmTC_96106 
+: && /bin/gcc-9 -DCHECK_FUNCTION_EXISTS=pthread_create  -rdynamic CMakeFiles/cmTC_96106.dir/CheckFunctionExists.c.o  -o cmTC_96106  -lpthreads && :
+/usr/bin/ld: невозможно найти -lpthreads
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+

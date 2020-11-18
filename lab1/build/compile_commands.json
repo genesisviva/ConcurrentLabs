@@ -1,0 +1,13 @@
+[
+{
+  "directory": "/home/genesisviva/Parallel/lab1/build",
+  "command": "/bin/g++-9   -I/home/genesisviva/libs/boost_1_71_0  -g   -o CMakeFiles/child.dir/child.cpp.o -c /home/genesisviva/Parallel/lab1/child.cpp",
+  "file": "/home/genesisviva/Parallel/lab1/child.cpp"
+},
+
+{
+  "directory": "/home/genesisviva/Parallel/lab1/build",
+  "command": "/bin/g++-9  -DBOOST_ALL_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -I/home/genesisviva/libs/boost_1_71_0  -g   -o CMakeFiles/lab1.dir/main.cpp.o -c /home/genesisviva/Parallel/lab1/main.cpp",
+  "file": "/home/genesisviva/Parallel/lab1/main.cpp"
+}
+]
