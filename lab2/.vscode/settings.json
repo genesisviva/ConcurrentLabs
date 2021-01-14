@@ -1,0 +1,12 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "files.associations": {
+        "*.ipp": "cpp",
+        "*.tcc": "cpp",
+        "iosfwd": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "rope": "cpp",
+        "fstream": "cpp"
+    }
+}
